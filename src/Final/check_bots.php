@@ -3,7 +3,7 @@
 $captcha_text="following finding";
 $captcha_input= $_GET['captcha'];
 $redirect_location=$_GET['redirect_to'];
-$should_contain="opendns.com";
+$should_contain="katalean.com";
 
 if($captcha_input!=$captcha_text){
 	echo "Wrong CAPTCHA. Try Again.";
@@ -15,7 +15,7 @@ elseif(strpos($redirect_location,$should_contain) !== false){
 
 
 else{
-	header("Location: http://opendns.com/");
+	header("Location: http://katalean.com/");
 }
 
 ?>

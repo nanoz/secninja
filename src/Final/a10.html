@@ -35,7 +35,7 @@
 					<li><a href="a8.html">A8</a></li>
 					<li><a href="a9.html">A9</a></li>
 					<li><a href="a10.html">A10</a></li>
-					<!-- <li><img src="images/opendns_logo.png" alt="" width="65.5%" height="65.5%" align="right" /> -->
+					<!-- <li><img src="images/katalean_logo.png" alt="" width="65.5%" height="65.5%" align="right" /> -->
 				</ul>
 			</nav>
 			<div class="wrapper style2">
@@ -54,7 +54,7 @@
 							<br>
 							<form name="captchaform" action="check_bots.php" method="get">
 							    Text <input type="text" name="captcha"><br>
-							    <input type="hidden" name="redirect_to" value="opendns.com">
+							    <input type="hidden" name="redirect_to" value="katalean.com">
 							    <input type="submit" value="Submit">
 
 							</form>				
@@ -70,41 +70,9 @@
 				
 						<p>Can you alter the redirect location?</p>
 					</header>
-					<div>
-						
-						<div class="row">
-							<div class="12u">
-							<ul>
-							<li><H5 style="cursor: pointer" onclick="toggleBlock(this, 'hint1');"> Hint 1 </H5>
-							<DIV id="hint1" style="display:none">
-							<P>
-							Look at all parameters being sent to the server
-							</P>
-							</DIV></li>
-
-							<li><H5 style="cursor: pointer" onclick="toggleBlock(this, 'hint2');"> Hint 2 </H5>
-							<DIV id="hint2" style="display:none">
-							<P>
-							Edit the parameter 'redirect_to' to include a malicious URL. Note that there is validation done on the redirect location on the back end but that is imperfect.
-							</P>
-							
-							</DIV></li>
-
-							<li><H5 style="cursor: pointer" onclick="toggleBlock(this, 'solution');"> Solution </H5>
-							<DIV id="solution" style="display:none">
-							<P>
-							Edit redirect_to to opendns.com.{bad URL} <br> e.g. opendns.com.internetbadguys.com
-							</P>
-							
-							</DIV></li>
-							
-							</ul>
-							</div>
-						</div>
-					</div>
 					<footer>
 						<ul id="copyright">
-							<li>&copy; OpenDNS. All rights reserved.</li><li><a href="http://engineering.opendns.com/security/" target="_blank">OpenDNS Security</a></li>
+							<li>&copy; KataLean. All rights reserved.</li><li><a href="http://www.katalean.com/" target="_blank">KataLean Security</a></li>
 						</ul>
 					</footer>
 				</article>

@@ -48,7 +48,7 @@
 					<li><a href="a8.html">A8</a></li>
 					<li><a href="a9.html">A9</a></li>
 					<li><a href="a10.html">A10</a></li>
-					<!-- <li><img src="images/opendns_logo.png" alt="" width="65.5%" height="65.5%" align="right" /> -->
+					<!-- <li><img src="images/katalean_logo.png" alt="" width="65.5%" height="65.5%" align="right" /> -->
 				</ul>
 			</nav>
 			<div class="wrapper style2">
@@ -126,32 +126,9 @@
 				
 						<p>This page doesn't have any CSRF protection. e.g., unique random token, etc.</p>
 					</header>
-					<div>
-						<div class="row">
-							<div class="12u">
-							<ul>
-							<li><H5 style="cursor: pointer" onclick="toggleBlock(this, 'hint1');"> Hint 1 </H5>
-							<DIV id="hint1" style="display:none">
-							<P>
-							Can you formulate the parameters needed to complete the query?
-							</P>
-							</DIV></li>
-
-							<li><H5 style="cursor: pointer" onclick="toggleBlock(this, 'solution');"> Solution </H5>
-							<DIV id="solution" style="display:none">
-							<P>
-							'update_email.php?new_email=user1@gmail.com&user=user1&Update=Save' is the relative URL and send it as a phishing link to user1 or embed it in a page and make user1 go to that page. If user1 is authenticated, the action would be executed (vice versa for user2). 
-							</P>
-							
-							</DIV></li>
-							
-							</ul>
-							</div>
-						</div>
-					</div>
 					<footer>
 						<ul id="copyright">
-							<li>&copy; OpenDNS. All rights reserved.</li><li><a href="http://engineering.opendns.com/security/" target="_blank">OpenDNS Security</a></li>
+							<li>&copy; KataLean. All rights reserved.</li><li><a href="http://www.katalean.com/" target="_blank">KataLean Security</a></li>
 						</ul>
 					</footer>
 				</article>

@@ -36,7 +36,7 @@
 					<li><a href="a8.html">A8</a></li>
 					<li><a href="a9.html">A9</a></li>
 					<li><a href="a10.html">A10</a></li>
-					<!-- <li><img src="images/opendns_logo.png" alt="" width="65.5%" height="65.5%" align="right" /> -->
+					<!-- <li><img src="images/katalean_logo.png" alt="" width="65.5%" height="65.5%" align="right" /> -->
 				</ul>
 			</nav>
 			<div class="wrapper style2">
@@ -94,7 +94,7 @@
 					
 					<footer>
 						<ul id="copyright">
-							<li>&copy; OpenDNS. All rights reserved.</li><li><a href="http://engineering.opendns.com/security/" target="_blank">OpenDNS Security</a></li>
+							<li>&copy; KataLean. All rights reserved.</li><li><a href="http://www.katalean.com/" target="_blank">KataLean Security</a></li>
 						</ul>
 					</footer>
 				</article>

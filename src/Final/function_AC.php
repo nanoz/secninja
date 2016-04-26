@@ -37,7 +37,7 @@
 					<li><a href="a8.html">A8</a></li>
 					<li><a href="a9.html">A9</a></li>
 					<li><a href="a10.html">A10</a></li>
-					<!-- <li><img src="images/opendns_logo.png" alt="" width="65.5%" height="65.5%" align="right" /> -->
+					<!-- <li><img src="images/katalean_logo.png" alt="" width="65.5%" height="65.5%" align="right" /> -->
 				</ul>
 			</nav>
 			<div class="wrapper style2">
@@ -57,10 +57,10 @@
 											$rows = explode("@#", $user_file);
 
 											$num_rows = count($rows);
-											$html = '<img src="images/opendns_logo.png" height=7% width=15% ><br><h3>LEADERSHIP</h3>';	
+											$html = '<img src="images/katalean_logo.png" height=7% width=15% ><br><h3>LEADERSHIP</h3>';	
 											$html .= '<table>';
 											$html .= '<thead><tr>';
-											//$html .= '<td><img src="images/opendns_logo.png" height=20%  ></td></tr>'.'<tr><td><h5>OPENDNS LEADERSHIP</h5></td>';			 
+											//$html .= '<td><img src="images/katalean_logo.png" height=20%  ></td></tr>'.'<tr><td><h5>KATALEAN LEADERSHIP</h5></td>';			 
 											$html .= '</tr></thead><tbody align="left">';
 											for($r = 0; $r < $num_rows; $r++)
 											{
@@ -88,7 +88,7 @@
 									{
 										file_put_contents("management.txt", $_POST["name"]."#@".$_POST["description"]."@#", FILE_APPEND);
 										echo "Success!";
-										echo '<br><a href="function_AC.php?operation=view&is_admin=false">OpenDNS Leadership</a>';
+										echo '<br><a href="function_AC.php?operation=view&is_admin=false">KataLean Leadership</a>';
 									}	
 
 									break;
@@ -108,7 +108,7 @@
 					
 					<footer>
 						<ul id="copyright">
-							<li>&copy; OpenDNS. All rights reserved.</li><li><a href="http://engineering.opendns.com/security/" target="_blank">OpenDNS Security</a></li>
+							<li>&copy; KataLean. All rights reserved.</li><li><a href="http://www.katalean.com/" target="_blank">KataLean Security</a></li>
 						</ul>
 					</footer>
 				</article>

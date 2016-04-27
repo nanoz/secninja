@@ -50,13 +50,13 @@
 
 							if($_COOKIE['sessionID'] == 'b3daa77b4c04a9551b8781d03191fe098f325e67')
 							{
-								echo "Pesonal details for User1 <p>Name: Foo <br> Email: foo_rocks@gmail.com <br> Phone: 415-415-415</p>";
+								echo "Personal details for User1 <p>Name: Foo <br> Email: foo_rocks@gmail.com <br> Phone: 415-415-415</p>";
 
 							}	
 
 							elseif($_COOKIE['sessionID'] == 'a1881c06eec96db9901c7bbfe41c42a3f08e9cb4')
 							{
-								echo "Pesonal details for User2 <p>Name: Bar <br> Email: bar_rocks@gmail.com <br> Phone: 415-415-416</p>";
+								echo "Personal details for User2 <p>Name: Bar <br> Email: bar_rocks@gmail.com <br> Phone: 415-415-416</p>";
 
 							}
 							else

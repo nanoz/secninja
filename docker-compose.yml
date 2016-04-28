@@ -5,7 +5,7 @@ services:
     build: .
     image: arno/secninja
     volumes:
-      - .:/var/www/html
+      - ./src/Final:/var/www/html
     ports:
       - 80:80
 

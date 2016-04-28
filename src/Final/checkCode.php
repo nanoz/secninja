@@ -1,7 +1,7 @@
 <?php
 
-$quantite = $_POST['quant'];
-$year = $_POST['y'];
+$quantite = $_POST['quantity'];
+$year = $_POST['year'];
 $code = $_POST['code'];
 
 $prix = 0;
@@ -14,8 +14,5 @@ if($quantite == 1){
 if($code == 'cesiut3'){
     $prix *= 0.9;
 }
-		
-$json = array();
-$json['prix'] = $prix;
 
 echo $prix;

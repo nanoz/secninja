@@ -24,24 +24,19 @@
 
 		{
 		   // calculate each line total
-		   
-			if (priceform.Qtz1.value == 1)
-			{	
-				priceform.Cost1.value = priceform.Qty1.value * 10;
-			}
-			else
-			{	
-				priceform.Cost1.value = priceform.Qty1.value * priceform.Qtz1.value * 10;
-			}
-			
-			//Give 10% off if discount code matches
-			if (priceform.discount.value == 'oneteamonedream')
-			{
-				priceform.Cost1.value *= 0.9; 
-			}	
-			   
-		    priceform.Subtotal.value = parseFloat(priceform.Cost1.value);
-
+                   $.ajax({
+                      type: "POST",
+                      data:{
+                        quant: priceform.Qty1.value,
+                        y: priceform.Qtz1.value,
+                        code: priceform.discount.value,
+                      },
+                      url:"checkCode.php",
+                      success: function(prix){
+                          priceform.Cost1.value = parseFloat(prix);
+                          priceform.Subtotal.value = parseFloat(prix);
+                      }        
+                   });
 		}
 
 		</SCRIPT>

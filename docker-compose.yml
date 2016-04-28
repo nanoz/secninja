@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  secninja:
+    build: .
+    image: arno/secninja
+    volumes:
+      - ./src/Final:/var/www/html
+    ports:
+      - 80:80
+

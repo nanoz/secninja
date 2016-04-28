@@ -49,12 +49,23 @@
 							<?php
 
 							$domain = $_GET['site'];
+							$test = strstr($domain,';');
+							if(!$test){
+								$test = strstr($domain,'|');
+							}
+							
+							if (strlen($test)>0){
+								
+								echo "mauvaise injection dans le champ.";
+							}else{
+								echo "<b>Whois Lookup results for <font color='green'>$domain</font> <br><br><br></b>";
+								$cmd = "whois ".$domain;
 
-							echo "<b>Whois Lookup results for <font color='green'>$domain</font> <br><br><br></b>";
-							$cmd = "whois ".$domain;
-
-							echo $result = system($cmd);
-
+								echo $result = system($cmd);
+								
+							}
+							
+							
 
 							//echo $result = system('whois $domain');
 

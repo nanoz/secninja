@@ -1,4 +1,4 @@
 ## Contributors
 
-Arno Baudu
-
+- Arno Baudu
+- Jennifer Chaignepain

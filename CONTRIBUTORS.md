@@ -1,4 +1,4 @@
 ## Contributors
 
-Arno Baudu
-Thibaut Chaumont
+- Arno Baudu
+- Thibaut Chaumont

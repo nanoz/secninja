@@ -1,5 +1,8 @@
 ## Contributors
 
-Arno Baudu
+- Arno Baudu
+- Thibaut Chaumont
+- Jennifer Chaignepain
+- Guillaume LAINÉ
 
-guillaume test de ma branche
+

@@ -49,12 +49,21 @@
 							<?php
 
 							$domain = $_GET['site'];
+							
+							if (preg_match('/[a-z].[a-z]/', $domain)){
+								
+								
+								echo "<b>Whois Lookup results for <font color='green'>$domain</font> <br><br><br></b>";
+								$cmd = "whois ".$domain;
 
-							echo "<b>Whois Lookup results for <font color='green'>$domain</font> <br><br><br></b>";
-							$cmd = "whois ".$domain;
+								echo $result = system($cmd);
+							}else{
+								
+								echo "mauvaise injection dans le champ.";
+							}
 
-							echo $result = system($cmd);
-
+						
+							
 
 							//echo $result = system('whois $domain');
 

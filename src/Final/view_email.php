@@ -1,138 +1,165 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>A8 : Cross-Site Request Forgery (CSRF)</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.scrolly.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-		<script langauge="javascript">
-	    function showForm1(){
-	    	document.getElementById('form1').style.display="block";
-	    	document.getElementById('form2').style.display="none";	
-	    }
+<head>
+	<title>A8 : Cross-Site Request Forgery (CSRF)</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.scrolly.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/init.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-desktop.css" />
+	</noscript>
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	<script langauge="javascript">
+	function showForm1(){
+		document.getElementById('form1').style.display="block";
+		document.getElementById('form2').style.display="none";	
+	}
 
-	    function showForm2(){
-	    	document.getElementById('form2').style.display="block";
-	    	document.getElementById('form1').style.display="none";	
-	    }
+	function showForm2(){
+		document.getElementById('form2').style.display="block";
+		document.getElementById('form1').style.display="none";	
+	}
 
-		</script>
-		<script type="text/javascript" src="logout.js"></script>
-	</head>
-	<body>
+	</script>
+	<script type="text/javascript" src="logout.js"></script>
+</head>
+<body>
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<img src="images/ninja.png" alt="" width="8.5%" height="8.5%" align="left" />
-					<li><a href="a1.html">A1</a></li>
-					<li><a href="a2.html">A2</a></li>
-					<li><a href="a3.html">A3</a></li>
-					<li><a href="a4.html">A4</a></li>
-					<li><a href="a5.html">A5</a></li>
-					<li><a href="a6.html">A6</a></li>
-					<li><a href="a7.html">A7</a></li>
-					<li><a href="a8.html">A8</a></li>
-					<li><a href="a9.html">A9</a></li>
-					<li><a href="a10.html">A10</a></li>
-					<!-- <li><img src="images/katalean_logo.png" alt="" width="65.5%" height="65.5%" align="right" /> -->
-				</ul>
-			</nav>
-			<div class="wrapper style2">
-				<article id="work">
-					
-						<h5>A8 : Cross-Site Request Forgery (CSRF)</h5>
-					
-					<div class="container">
-							<button onclick="logoff()">Log Off</button><br><br><br>
+	<!-- Nav -->
+	<nav id="nav">
+		<ul class="container">
+			<img src="images/ninja.png" alt="" width="8.5%" height="8.5%" align="left" />
+			<li><a href="a1.html">A1</a></li>
+			<li><a href="a2.html">A2</a></li>
+			<li><a href="a3.html">A3</a></li>
+			<li><a href="a4.html">A4</a></li>
+			<li><a href="a5.html">A5</a></li>
+			<li><a href="a6.html">A6</a></li>
+			<li><a href="a7.html">A7</a></li>
+			<li><a href="a8.html">A8</a></li>
+			<li><a href="a9.html">A9</a></li>
+			<li><a href="a10.html">A10</a></li>
+			<!-- <li><img src="images/katalean_logo.png" alt="" width="65.5%" height="65.5%" align="right" /> -->
+		</ul>
+	</nav>
+	<div class="wrapper style2">
+		<article id="work">
 
-							<table>
-							  <tr>
-							    <th><b>User</b></th>
-							    <th><b>Email</b></th>
-							    <th></th>
-							  </tr>
-							  <tr>
-							    <td>user1</td>
-							    <td>
-							    	<?php
-									$file = fopen("user1.txt", "r") or die("Unable to open file!");
-									echo fgets($file);
-									fclose($file);
-									?>
-							    </td>
-							    <td><form id="ctrl" name="ctrl">
-							    <input type="button" id="ctrlbtn" name="update_u2"  value="Update" onclick="showForm1();"/> <br>
-								</form>
-								</td>
-							    <td>
-							    	<div id="form1" name="form1" style="display:none">
-							    	<form id="frm1" name="frm1" action="update_email.php" method="GET">
-							    	New Email <input type="text" name="new_email"/> <br>
-							    	<input type="hidden" name="user" value="user1">
-							  		<input type="submit" name="Update" value="Save"/> <br>
-									</form>
-									</div>
-							    </td>
-							  </tr>
-							  <tr>
-							    <td>user2</td>
-							    <td>
-							    	<?php
-									$file = fopen("user2.txt", "r") or die("Unable to open file!");
-									echo fgets($file);
-									fclose($file);
-									?>
-							    </td>
-							    <td><form id="ctrl" name="ctrl">
-							    <input type="button" value="Update" onclick="showForm2();"/> <br>
-								</form>
-								</td>
-							    <td>
-							    	<div id="form2" name="form2" style="display:none">
-							    	<form id="frm2" name="frm2" action="update_email.php" method="GET">
-							    	New Email <input type="text" name="new_email"/> <br>
-							    	<input type="hidden" name="user" value="user2">
-							  		<input type="submit" name="Update" value="Save"/> <br>
-									</form>
-									</div>
-							    </td>
-							  </tr>
-							</table>
+			<h5>A8 : Cross-Site Request Forgery (CSRF)</h5>
+			<?php
+					//On démarre les sessions
+
+			session_start();
+
+//On génére un jeton totalement unique (c'est capital :D)
+
+			$token = uniqid(rand(), true);
+
+//Et on le stocke
+
+			$_SESSION['token'] = $token;
+
+//On enregistre aussi le timestamp correspondant au moment de la création du token
+
+			$_SESSION['token_time'] = time();
+			?>
+			<div class="container">
+				<button onclick="logoff()">Log Off</button><br><br><br>
+
+				<table>
+					<tr>
+						<th><b>User</b></th>
+						<th><b>Email</b></th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>user1</td>
+						<td>
+							<?php
+							$file = fopen("user1.txt", "r") or die("Unable to open file!");
+							echo fgets($file);
+							fclose($file);
+							?>
+						</td>
+						<td><form id="ctrl" name="ctrl">
+							<input type="button" id="ctrlbtn" name="update_u2"  value="Update" onclick="showForm1();"/> <br>
+						</form>
+					</td>
+					<td>
+						<div id="form1" name="form1" style="display:none">
+							<form id="frm1" name="frm1" action="update_email.php" method="post">
+								New Email <input type="text" name="new_email"/> <br>
+								<input type="hidden" name="user" value="user1">
+								<input type="hidden" name="token" id="token" value="<?php
+
+								echo $token;
+
+								?>"/>
+								<input type="submit" name="Update" value="Save"/> <br>
+							</form>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>user2</td>
+					<td>
+						<?php
+						$file = fopen("user2.txt", "r") or die("Unable to open file!");
+						echo fgets($file);
+						fclose($file);
+						?>
+					</td>
+					<td><form id="ctrl" name="ctrl">
+						<input type="button" value="Update" onclick="showForm2();"/> <br>
+					</form>
+				</td>
+				<td>
+					<div id="form2" name="form2" style="display:none">
+						<form id="frm2" name="frm2" action="update_email.php" method="post">
+							New Email <input type="text" name="new_email"/> <br>
+							<input type="hidden" name="user" value="user2">
+							<input type="hidden" name="token" id="token" value="<?php
 
 
-					
+							echo $token;
+
+							?>"/>
+							<input type="submit" name="Update" value="Save"/> <br>
+						</form>
 					</div>
-					
-				</article>
-			</div>
-	
-			<div class="wrapper style4">
-				<article id="contact" class="container small">
-					<header>
-				
-						<p>This page doesn't have any CSRF protection. e.g., unique random token, etc.</p>
-					</header>
-					<footer>
-						<ul id="copyright">
-							<li>&copy; KataLean. All rights reserved.</li><li><a href="http://www.katalean.com/" target="_blank">KataLean Security</a></li>
-						</ul>
-					</footer>
-				</article>
-			</div>
+				</td>
+			</tr>
+		</table>
 
-	</body>
+
+
+	</div>
+
+</article>
+</div>
+
+<div class="wrapper style4">
+	<article id="contact" class="container small">
+		<header>
+
+			<p>This page doesn't have any CSRF protection. e.g., unique random token, etc.</p>
+		</header>
+		<footer>
+			<ul id="copyright">
+				<li>&copy; KataLean. All rights reserved.</li><li><a href="http://www.katalean.com/" target="_blank">KataLean Security</a></li>
+			</ul>
+		</footer>
+	</article>
+</div>
+
+</body>
 </html>
